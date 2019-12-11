@@ -1,0 +1,18 @@
+--- lib/colord/cd-edid.c.orig	2015-10-13 18:24:13.000000000 +0300
++++ lib/colord/cd-edid.c	2019-12-10 20:14:35.665867666 +0300
+@@ -111,6 +111,7 @@
+ static gchar *
+ cd_edid_convert_pnp_id_to_string (const gchar *pnp_id)
+ {
++#if 0
+ #ifdef HAVE_UDEV
+ 	gchar *vendor = NULL;
+ 	struct udev_hwdb *hwdb = NULL;
+@@ -145,6 +146,7 @@
+ 		udev_hwdb_unref (hwdb);
+ 	if (udev != NULL)
+ 		udev_unref (udev);
++#endif
+ #else
+ 	gboolean ret;
+ 	gchar *idx2;
